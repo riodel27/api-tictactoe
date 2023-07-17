@@ -56,5 +56,5 @@ yarn test:watch
 List of available routes:
 
 **User routes**:\
-`POST /api/game/add` - create a user\
-`GET /api/game/list` - get all user\
+`POST /api/game/add` - create a game session\
+`GET /api/game/list` - get all game session\
