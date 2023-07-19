@@ -61,7 +61,7 @@ const paginate = <T extends Document, U extends Model<U>>(schema: Schema<T>): vo
                 })
                 project = projectionCriteria.join(' ')
             } else {
-                project = '-createdAt -updatedAt'
+                project = ''
             }
 
             const limit =
@@ -92,6 +92,7 @@ const paginate = <T extends Document, U extends Model<U>>(schema: Schema<T>): vo
 
             return Promise.all([countPromise, docsPromise]).then((values) => {
                 const [totalResults, results] = values
+
                 const totalPages = Math.ceil(totalResults / limit)
                 const result = {
                     results,
